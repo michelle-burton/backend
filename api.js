@@ -7,6 +7,7 @@ const users = [
 ];
 
 const server = http.createServer((req, res) => {
+    const urlParts = req.url.split('/');
     if (req.url === '/users' && req.method === 'GET') {
         res.writeHead(200, { 'Content-Type': 'application/json' });
         res.end(JSON.stringify(users));
